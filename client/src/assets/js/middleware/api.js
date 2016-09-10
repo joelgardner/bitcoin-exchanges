@@ -1,14 +1,12 @@
 import 'isomorphic-fetch'
-//import { config } from '../../../../../server/src/api.config.js'
 
 export const CALL_API = Symbol('Call API')
 
-//const API_VERSION = 'v1'
-//const API_ROOT = `https://www.coinigy.com/api/${API_VERSION}`
+const API_VERSION = 'v1'
+const API_ROOT = `http://localhost:3000/proxy/api/${API_VERSION}`
 
 function callApi(endpoint) {
-  debugger;
-  return fetch('http://localhost:3000/proxy/api/v1' + endpoint, {
+  return fetch(API_ROOT + endpoint, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
