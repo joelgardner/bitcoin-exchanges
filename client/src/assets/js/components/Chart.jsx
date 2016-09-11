@@ -1,35 +1,27 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-
-// let Chart = ({ history }) => {
-//   if (!history) return null
-
-//     console.log
-//   return (
-//     <div>{history.length}</div>
-//   )
-// }
-
-// export default Chart
-
 import React from 'react'
 import * as d3 from 'd3'
 
-const dimensions = {
-  width: 800,
+let dimensions = {
+  width: document.body.clientWidth,
   height: 600
 }
 
 class Chart extends React.Component {
 
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+    window.addEventListener('resize', (e) => {
+      dimensions.width = document.body.clientWidth;
+      this.redraw(this.props.history)
+    })
+  }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.history) return;
+    this.redraw(nextProps.history);
+  }
 
-    let data = nextProps.history;
+  redraw(data) {
+    if (!data) return;
 
     let svg = d3.select('.chart')
         .attr('width', dimensions.width)

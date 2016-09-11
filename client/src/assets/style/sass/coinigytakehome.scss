@@ -26,9 +26,17 @@ ul {
   padding: 0;
 }
 
+.chart-container {
+  text-align: center;
+}
+
 /*
 Graph styling
 */
+svg {
+  box-shadow: 1px 1px 15px 6px rgba(191,207,219,1);
+}
+
 .chart g rect {
   fill: steelblue;
 }
