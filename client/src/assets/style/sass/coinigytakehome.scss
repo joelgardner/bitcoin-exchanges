@@ -2,6 +2,21 @@
 Styling for Coinigy takehome project
 */
 
+$nav-background-color:#32292F;
+$nav-item-hover-color:#705D56;
+
+body {
+  font-family: 'Open Sans', sans-serif
+}
+
 .container {
   display: flex;
+}
+
+.c-nav {
+  background-color: $nav-background-color;
+}
+
+.c-nav__item:not(:disabled):hover {
+  background-color: $nav-item-hover-color;
 }

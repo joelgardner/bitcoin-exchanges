@@ -5,14 +5,15 @@ export const CALL_API = Symbol('Call API')
 const API_VERSION = 'v1'
 const API_ROOT = `http://localhost:3000/proxy/api/${API_VERSION}`
 
-function callApi(endpoint) {
+function callApi(endpoint, body) {
   return fetch(API_ROOT + endpoint, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
+    body: body && typeof(body) === 'object' ? JSON.stringify(body) : body
   })
-  .then(response => response.json().then(json => { json, response }))
+  .then(response => response.json())
 }
 
 export default store => next => action => {
@@ -21,7 +22,7 @@ export default store => next => action => {
     return next(action)
   }
 
-  const { endpoint, types } = callAPI
+  const { endpoint, types, body } = callAPI
 
   // validate the shape of our action
   if (!Array.isArray(types) || types.length !== 3) {
@@ -40,7 +41,7 @@ export default store => next => action => {
   const [ requestType, successType, failureType ] = types
   next(actionWith({ type: requestType }))
 
-  return callApi(endpoint).then(
+  return callApi(endpoint, body).then(
     response => next(actionWith({
       response,
       type: successType

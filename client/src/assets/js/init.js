@@ -17,12 +17,7 @@ const store = createStore(
 render((
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={AppContainer}>
-        {/*<IndexRoute component={Dashboard} />
-        <Route path="todos" component={TodosContainer} onEnter={onEnterTodosContainer(store.dispatch)}>
-           <Route path="/:id" component={TodoDetailsContainer} />
-        </Route>*/}
-      </Route>
+      <Route path="/" component={AppContainer}></Route>
     </Router>
   </Provider>
 ), document.getElementById('content'))
