@@ -1,5 +1,36 @@
 /*
 Styling for Coinigy takehome project
 */
+body {
+  font-family: 'Open Sans', sans-serif; }
+
 .container {
   display: flex; }
+
+.c-nav {
+  background-color: #32292F; }
+
+.c-nav__item:not(:disabled):hover {
+  background-color: #705D56; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+.chart-container {
+  text-align: center; }
+
+/*
+Graph styling
+*/
+svg {
+  box-shadow: 1px 1px 15px 6px #bfcfdb; }
+
+.chart g rect {
+  fill: steelblue; }
+
+/*
+BlazeCSS tweaks
+*/
+.o-panel--nav-top {
+  top: 3.7em; }

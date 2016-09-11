@@ -10,10 +10,6 @@ class Chart extends React.Component {
 
   constructor() {
     super();
-    window.addEventListener('resize', (e) => {
-      dimensions.width = document.body.clientWidth;
-      this.redraw(this.props.history)
-    })
   }
 
   componentWillReceiveProps(nextProps) {
