@@ -20,3 +20,22 @@ body {
 .c-nav__item:not(:disabled):hover {
   background-color: $nav-item-hover-color;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Graph styling
+*/
+.chart g rect {
+  fill: steelblue;
+}
+
+/*
+BlazeCSS tweaks
+*/
+.o-panel--nav-top {
+    top: 3.7em;
+}

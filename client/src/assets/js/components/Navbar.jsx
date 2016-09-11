@@ -5,16 +5,18 @@ import Markets from './Markets.jsx'
 
 let Navbar = ({ loadMarkets, loadTransactions, exchanges, markets }) => {
   return (
-    <ul className="c-nav c-nav--inline">
-      <li className="c-nav__item" id="exchanges-nav-item" disabled>
-        <Exchanges exchanges={exchanges} loadMarkets={loadMarkets} />
-      </li>
-      { markets
-        ? <li className="c-nav__item" id="exchanges-nav-item" disabled>
-            <Markets markets={markets} loadTransactions={loadTransactions} />
-          </li>
-        : null }
-    </ul>
+
+      <ul>
+        <li className="c-nav__content" id="exchanges-nav-item" disabled>
+          <Exchanges exchanges={exchanges} loadMarkets={loadMarkets} />
+        </li>
+        { markets
+          ? <li className="c-nav__content" id="exchanges-nav-item" disabled>
+              <Markets markets={markets} loadTransactions={loadTransactions} />
+            </li>
+          : null }
+      </ul>
+
   )
 }
 

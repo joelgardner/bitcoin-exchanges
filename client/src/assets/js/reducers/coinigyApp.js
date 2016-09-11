@@ -6,7 +6,7 @@ import {
   SELECT_EXCHANGE
 } from "../actions"
 
-
+// entities gets updated via API calls
 function entities(state = { exchanges : {}, markets : {}, history : { data : {} } }, action) {
   switch (action.type) {
     case EXCHANGES_SUCCESS:
@@ -20,6 +20,7 @@ function entities(state = { exchanges : {}, markets : {}, history : { data : {} 
   return state;
 }
 
+// selections
 function selections(state = { exchange : null, market : null }, action) {
   switch (action.type) {
     case SELECT_EXCHANGE:
