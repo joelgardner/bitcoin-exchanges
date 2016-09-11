@@ -6,7 +6,8 @@ You must create a file called `api.config.json` (see `api.sample.config.json`) i
       "secret": "YOUR_API_SECRET_HERE"
     }
 
-## Run (after `npm install` in both `client` and `server`:
+## Run
+- `npm install` inside both `client` and `server`.
 - `node index.js` inside `server/src`.
 - Navigate to `http://localhost:3000/` in your browser.
 - Run `webpack` in `client/src` to build after changes.
