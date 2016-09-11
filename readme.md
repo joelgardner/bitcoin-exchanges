@@ -1,5 +1,5 @@
 ###IMPORTANT:
-You must create a file called `api.config.json` (see api.sample.config.json) in `server/src` with contents:
+You must create a file called `api.config.json` (see `api.sample.config.json`) in `server/src` with contents:
 
     {
       "key": "YOUR_API_KEY_HERE",
